@@ -24,7 +24,6 @@
         <section class="content">
             <div class="header-actions">
                 <h1>Liste des Réservations</h1>
-                <a href="${pageContext.request.contextPath}/reservations/new" class="btn btn-primary">Nouvelle Réservation</a>
             </div>
 
             <!-- Formulaire de filtre par date -->
@@ -54,7 +53,7 @@
                             <td>${reservation.idHotel}</td>
                             <td>${reservation.idClient}</td>
                             <td>${reservation.nbPassager}</td>
-                            <td>${reservation.dateHeure}</td>
+                            <td>${reservation.getFormatedDate()}</td>
                         </tr>
                     </c:forEach>
                 </tbody>
