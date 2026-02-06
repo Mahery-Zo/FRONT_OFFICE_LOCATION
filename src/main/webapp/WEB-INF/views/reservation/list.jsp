@@ -31,32 +31,20 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Client</th>
-                        <th>Email</th>
-                        <th>Date Début</th>
-                        <th>Date Fin</th>
-                        <th>Statut</th>
-                        <th>Actions</th>
+                        <th>Hotel ID</th>
+                        <th>Client ID</th>
+                        <th>Nombre de Passagers</th>
+                        <th>Date/Heure</th>
                     </tr>
                 </thead>
                 <tbody>
                     <c:forEach var="reservation" items="${reservations}">
                         <tr>
                             <td>${reservation.id}</td>
-                            <td>${reservation.clientName}</td>
-                            <td>${reservation.clientEmail}</td>
-                            <td>${reservation.dateDebut}</td>
-                            <td>${reservation.dateFin}</td>
-                            <td>
-                                <span class="badge badge-${reservation.status.toLowerCase()}">${reservation.status}</span>
-                            </td>
-                            <td class="actions">
-                                <a href="${pageContext.request.contextPath}/reservations/${reservation.id}" class="btn btn-sm">Voir</a>
-                                <a href="${pageContext.request.contextPath}/reservations/${reservation.id}/edit" class="btn btn-sm btn-secondary">Modifier</a>
-                                <form action="${pageContext.request.contextPath}/reservations/${reservation.id}/delete" method="post" style="display:inline;">
-                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Êtes-vous sûr?')">Supprimer</button>
-                                </form>
-                            </td>
+                            <td>${reservation.idHotel}</td>
+                            <td>${reservation.idClient}</td>
+                            <td>${reservation.nbPassager}</td>
+                            <td>${reservation.dateHeure}</td>
                         </tr>
                     </c:forEach>
                 </tbody>
