@@ -18,7 +18,7 @@ public class ReservationApi implements Serializable {
     private Integer nbPassager;
 
     @JsonProperty("dateHeure")
-    private Object dateHeure;
+    private String dateHeure;
 
     public ReservationApi() {
     }
@@ -55,11 +55,11 @@ public class ReservationApi implements Serializable {
         this.nbPassager = nbPassager;
     }
 
-    public Object getDateHeure() {
+    public String getDateHeure() {
         return dateHeure;
     }
 
-    public void setDateHeure(Object dateHeure) {
+    public void setDateHeure(String dateHeure) {
         this.dateHeure = dateHeure;
     }
 }

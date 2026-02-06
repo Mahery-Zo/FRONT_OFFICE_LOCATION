@@ -27,6 +27,16 @@
                 <a href="${pageContext.request.contextPath}/reservations/new" class="btn btn-primary">Nouvelle Réservation</a>
             </div>
 
+            <!-- Formulaire de filtre par date -->
+            <div class="filter-section" style="margin-bottom: 20px; padding: 15px; background-color: #f5f5f5; border-radius: 5px;">
+                <form method="get" action="${pageContext.request.contextPath}/reservations" style="display: flex; gap: 10px; align-items: center;">
+                    <label for="dateFilter" style="margin: 0;">Filtrer par date:</label>
+                    <input type="date" id="dateFilter" name="date" value="${selectedDate}" style="padding: 5px; border: 1px solid #ccc; border-radius: 3px;">
+                    <button type="submit" class="btn btn-primary">Filtrer</button>
+                    <a href="${pageContext.request.contextPath}/reservations" class="btn btn-secondary">Réinitialiser</a>
+                </form>
+            </div>
+
             <table class="table">
                 <thead>
                     <tr>
