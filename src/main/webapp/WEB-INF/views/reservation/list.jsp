@@ -40,7 +40,7 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Hotel ID</th>
+                        <th>Hotel</th>
                         <th>Client ID</th>
                         <th>Nombre de Passagers</th>
                         <th>Date/Heure</th>
@@ -50,11 +50,10 @@
                     <c:forEach var="reservation" items="${reservations}">
                         <tr>
                             <td>${reservation.id}</td>
-                            <td>${reservation.idHotel}</td>
+                            <td>${reservation.hotel}</td>
                             <td>${reservation.idClient}</td>
                             <td>${reservation.nbPassager}</td>
-                            <td>${reservation.getFormatedDate()}</td>
-                        </tr>
+                            <td>${reservation.formatedDate}</td>
                     </c:forEach>
                 </tbody>
             </table>
