@@ -11,8 +11,8 @@ public class ReservationApi implements Serializable {
     @JsonProperty("id")
     private Long id;
 
-    @JsonProperty("idHotel")
-    private Long idHotel;
+    @JsonProperty("nomHotel")
+    private String Hotel;
 
     @JsonProperty("idClient")
     private String idClient;
@@ -34,12 +34,12 @@ public class ReservationApi implements Serializable {
         this.id = id;
     }
 
-    public Long getIdHotel() {
-        return idHotel;
+    public String getHotel() {
+        return Hotel;
     }
 
-    public void setIdHotel(Long idHotel) {
-        this.idHotel = idHotel;
+    public void setHotel(String Hotel) {
+        this.Hotel = Hotel;
     }
 
     public String getIdClient() {
