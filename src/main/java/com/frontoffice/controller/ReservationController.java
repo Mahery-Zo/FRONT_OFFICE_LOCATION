@@ -16,14 +16,20 @@ public class ReservationController {
     @Autowired
     private RestTemplate restTemplate;
 
+    @org.springframework.beans.factory.annotation.Value("${api.base.url}")
+    private String apiBaseUrl;
+
+    @org.springframework.beans.factory.annotation.Value("${api.token}")
+    private String apiToken;
+
     @GetMapping
     public String listReservations(@RequestParam(required = false) String date, Model model) {
         try {
-            String apiUrl = "http://localhost:8084/api/reservations";
+            String apiUrl = apiBaseUrl + "/api/reservations?token=" + apiToken;
             
             // Ajouter le paramètre date si fourni
             if (date != null && !date.isEmpty()) {
-                apiUrl += "?dateStr=" + date;
+                apiUrl += "&dateStr=" + date;
                 model.addAttribute("selectedDate", date);
             }
             
